@@ -1,7 +1,8 @@
-from resorces import mensagem, opcao_selecionada, gerar_codigo, diciplinas_disponiveis
+from resorces import mensagem, opcao_selecionada, gerar_codigo, diciplinas_disponiveis, menu_opcoes
 from random import randint
 
 mensagem("Menu")
+menu_opcoes()
 
 alunos = [] # lista para armazenar todos os alunos
 
@@ -106,15 +107,54 @@ def cadastrar_professor():
     disciplina = int(input("Digite o número correspondente a disciplina \n"))'''
     
     
-    
+diciplinas = []
 def cadastrar_disciplina():
     print(" 3 - Cadastrar Disciplina")
-    print("Funcionalidade de cadastro de disciplina ainda não implementada.")
-    # isso é uma funcao placeholder
+    
+    nome_disciplina = input("Digite o nome da disciplina: \n")
+    codigo = gerar_codigo()
+    carga_horaria = int(input("Digite a carga horária da disciplina em horas: \n"))
+    nome_professor = input("Digite o nome do professor responsável: \n")
+    '''carga_horaria = f"{carga_horaria} horas"'''
+    
+    dados_diciplina = {}
+    
+    dados_diciplina["nome"] = nome_disciplina
+    dados_diciplina["codigo"] = codigo
+    dados_diciplina["carga_horaria"] = carga_horaria
+    dados_diciplina["professor"] = nome_professor
+    diciplinas.append(dados_diciplina)
+    
+    print("Disciplina cadastrada com sucesso!")
+    print(dados_diciplina) # placeholder
+    
+    # nome codigo carga horaria professor
+turma = []  
     
 def cadastrar_turma():
     print(" 4 - Cadastrar Turma")
-    print("Funcionalidade de cadastro de turma ainda não implementada.")
+    
+    nome_turma = input("Digite o nome da turma: \n")
+    codigo = gerar_codigo()
+    nome_disciplina = input("Digite o nome da disciplina: \n")
+    
+    # queria que essa parte possuisse a opção de escolher a disciplina ja cadastrada e vincular a turma a ela de alguma forma, não só nessa funcao mas nas outras tambem
+    
+    nome_professor = input("Digite o nome do professor responsável: \n")
+    
+    dados_turma = {}
+    
+    dados_turma["nome"] = nome_turma
+    dados_turma["codigo"] = codigo
+    dados_turma["disciplina"] = nome_disciplina
+    dados_turma["professor"] = nome_professor
+    
+    turma.append(dados_turma)
+    
+    print("Turma cadastrada com sucesso!")
+    print(dados_turma) # placeholder
+    
+    # nome codigo disciplina professor alunos (lista-matricula)
     
 opcoes = {
     1: cadastar_aluno,
