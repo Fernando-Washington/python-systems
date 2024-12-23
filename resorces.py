@@ -8,6 +8,14 @@ def mensagem(msg):
     print(msg.center(30))
     print("-" * 30)
 
+def menu_opcoes():
+    print("------------------------------")
+    print("-  1 - Cadastrar Aluno       -")
+    print("-  2 - Cadastrar Professor   -")
+    print("-  3 - Cadastrar Disciplina  -")
+    print("-  4 - Cadastrar Turma       -")
+    print("------------------------------")
+    
 # função para selecionar opção
 def opcao_selecionada(msg):
     print("Opção selecionada: \n" + msg)
