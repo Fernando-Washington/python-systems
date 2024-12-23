@@ -11,7 +11,7 @@ data_nascimento = 12/12/1990
 sexo = m
 endereco = rua 1
 telefone = 123456
-email = beta@ifms.edu.br
+email = beto@ifms.edu.br
 
 codigo = a123456
 nome_disciplina = a123
