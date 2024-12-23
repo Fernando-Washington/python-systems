@@ -1,4 +1,4 @@
-from resorces import mensagem 
+from resorces import mensagem
 
 mensagem("Sistema Acadêmico")
 

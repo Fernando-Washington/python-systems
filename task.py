@@ -5,7 +5,7 @@
 - Disciplinas: nome, código (A1234), carga horária, professor.
 - Turmas: nome, código (A1234), disciplinas, professor, alunos (lista-matricula).
 
-nome = beta
+nome = beto
 matricula = 123456
 data_nascimento = 12/12/1990
 sexo = m
