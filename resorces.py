@@ -36,6 +36,7 @@ def diciplinas_disponiveis():
     print("10 - Inglês")"""
     
           
+
 def voltar():
     print("Caso queira voltar a opção anterior digite voltar a qualquer momento")#?? verificar se isso é necessário
 

@@ -5,6 +5,10 @@ mensagem("Menu")
 
 alunos = [] # lista para armazenar todos os alunos
 
+# variaveis com escopo global podem ter o mesmo nome em diferentes funções
+
+# parte 1
+
 def cadastar_aluno():
     print(" 1 - Cadastrar Aluno")
     dados_aluno = {}
@@ -33,7 +37,7 @@ def cadastar_aluno():
     
     dados_aluno["nome"] = nome_aluno
     dados_aluno["matricula"] = matricula
-    dados_aluno["data_nasc"] = data_nasc
+    dados_aluno["nascimento"] = data_nasc
     dados_aluno["sexo"] = sexo
     dados_aluno["endereco"] = endereco
     dados_aluno["telefone"] = telefone
@@ -44,12 +48,18 @@ def cadastar_aluno():
     print("Aluno cadastrado com sucesso!")    
     
     # talvez fazer uma maneira de identificar o aluno no sistema 
+ 
+ 
+# parte 2 --------------------------
+    
+
+professores = []
     
 def cadastrar_professor():
     print(" 2 - Cadastrar Professor")
     
     nome_professor = input("Digite o nome do professor: \n")
-    gerar_codigo()
+    codigo = gerar_codigo()
     data_nasc = input("Digite a data de nascimento do professor: \n")
     
     sexo = input("Digite o sexo do professor (M/F): \n").upper()
@@ -64,23 +74,36 @@ def cadastrar_professor():
     while "@" not in email:
         print("E-mail inválido. Digite novamente. incluindo @ no email")
         email = input("Digite o e-mail do professor: ")
+        
+    disciplina_professor = input("Digite o nome da disciplina do professor")   
     
+    # adicionando os dados do professor em um dicionário
+    
+    dados_professor = {}
+    
+    dados_professor["nome"] = nome_professor
+    
+    dados_professor["codigo"] = codigo
+    dados_professor["nascimento"] = data_nasc
+    dados_professor["sexo"] = sexo
+    dados_professor["endereco"] = endereco
+    dados_professor["telefone"] = telefone
+    dados_professor["email"] = email  
+    dados_professor["disciplina"] = disciplina_professor
+    
+    print("Professor cadastrado com sucesso!")
+    print(dados_professor)
+    
+    '''
     diciplinas_disponiveis()
     #opcoes de disciplinas disponiveis
     
-    def matematica():
-        print("1 - Matemática")
-        print("Funcionalidade de cadastro de turma ainda não implementada.")
-    def portugues():
-        print("2 - Português")
-        print("Funcionalidade de cadastro de turma ainda não implementada.")
-        
     opcoes = {
         1: "Matemática",
         2: "Português",
     }
     
-    disciplina = int(input("Digite a disciplina do professor: \n"))
+    disciplina = int(input("Digite o número correspondente a disciplina \n"))'''
     
     
     
