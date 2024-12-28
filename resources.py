@@ -49,14 +49,6 @@ def diciplinas_disponiveis():
 def voltar():
     print("Caso queira voltar a opção anterior digite voltar a qualquer momento")#?? verificar se isso é necessário
     
-def listar_opcoes(lista, chave_nome, chave_codigo=None):
-    # exibe opcoes disponíveis em uma lista global
-     if not lista: 
-         return False
-     for i, item in enumerate(lista):
-        if chave_codigo:
-            print(f"{i + 1} - {item[chave_nome]} (Código: {item[chave_codigo]})")
-        else:
-            print(f"{i + 1} - {item[chave_nome]}")
+
              
         
