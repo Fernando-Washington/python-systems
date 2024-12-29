@@ -16,7 +16,7 @@ def cadastrar_disciplina():
         print("Professores já cadastrados: \n")
         for i, item in enumerate(professores): 
             print(f"{i + 1} {item['nome']}") 
-            # exibindo os professores cadastrados de forma numerada
+            # exibindo os professores cadastrados para garantir que nomes de disciplinas de forma numerada
             escolha = int(input("Selecione o número do professor respomsável pela disciplina \n")) - 1 # -1 pois a lista começa do 0
         if 0 <= escolha < len(professores):    
             professor_selecionado = professores[escolha]["nome"]
