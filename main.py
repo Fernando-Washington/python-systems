@@ -4,8 +4,10 @@ from professores import cadastrar_professor
 from disciplinas import cadastrar_disciplina
 from turmas import cadastrar_turma
 
+# mensagem de boas vindas
 mensagem("Sistema Acadêmico")
 
+# dicionário que mapeia as opções do menu com as funções correspondentes
 opcoes = {
     1: cadastar_aluno,
     2: cadastrar_professor,
@@ -13,19 +15,20 @@ opcoes = {
     4: cadastrar_turma
 }
 
-while True:
-    mensagem("Menu")
-    menu_opcoes()
+# Loop principal do programa para interagir com o usuário
+def main():
+    while True:
+        mensagem("Menu")
+        menu_opcoes()
 
-    opcao_escolhida = int(input("Digite a opção desejada: "))
+        opcao_escolhida = int(input("Digite a opção desejada: "))
 
-    if opcao_escolhida == 5:
-        print("Saindo do sistema...")
-        break
-    elif opcao_escolhida in opcoes:
-        opcoes[opcao_escolhida]()
-    else:
-        print("Opção inválida. Tente novamente.")
-        
-        # Se opcao_escolhida estiver em opcoes, a condição é verdadeira e o código dentro do if será executado.
+        if opcao_escolhida == 5:
+            print("Saindo do sistema...")
+            break
+        elif opcao_escolhida in opcoes:
+            opcoes[opcao_escolhida]()
+        else:
+            print("Opção inválida. Tente novamente.")
+main()
 

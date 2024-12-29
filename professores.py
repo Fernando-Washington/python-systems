@@ -1,13 +1,14 @@
 from resources import gerar_codigo
 
 professores = []
-    
+
+# cadastro de professores incluindo disciplina associada
 def cadastrar_professor():
     print(" 2 - Cadastrar Professor")
     
     nome_professor = input("Digite o nome do professor: \n")
     codigo = gerar_codigo()
-    data_nasc = input("Digite a data de nascimento do professor: \n")
+    data_nasc = input("Digite a data de nascimento do aluno (DD/MM/AAAA): \n")
     
     sexo = input("Digite o sexo do professor (M/F): \n").upper()
     while sexo not in ["M","F"]:
@@ -26,17 +27,16 @@ def cadastrar_professor():
     
     # adicionando os dados do professor em um dicionário
     
-    dados_professor = {}
+    dados_professor = {
+        "nome": nome_professor,
+        "codigo": codigo,
+        "nascimento": data_nasc,
+        "sexo": sexo,
+        "endereco": endereco,
+        "telefone": telefone,
+        "email": email,
+        "disciplina": disciplina_professor
+    }
     
-    dados_professor["nome"] = nome_professor
-    
-    dados_professor["codigo"] = codigo
-    dados_professor["nascimento"] = data_nasc
-    dados_professor["sexo"] = sexo
-    dados_professor["endereco"] = endereco
-    dados_professor["telefone"] = telefone
-    dados_professor["email"] = email  
-    dados_professor["disciplina"] = disciplina_professor
-    
+    professores.append(dados_professor)
     print("Professor cadastrado com sucesso!")
-    print(dados_professor)

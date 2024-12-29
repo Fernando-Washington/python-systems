@@ -1,16 +1,16 @@
 from random import randint
 alunos = []
 
+# funcao para cadastrar alunos
 def cadastar_aluno():
     print(" 1 - Cadastrar Aluno")
     dados_aluno = {}
     
     nome_aluno = input("Digite o nome do aluno: \n")
-    matricula = randint(1000000, 9999999)
-    print(f"A matricula gerada é {matricula}") # funciona
-    # acho que a matricula tem que ser gerada automaticamente com randint
+    matricula = randint(1000000, 9999999) # matricula aleatoria
+    print(f"A matricula gerada é {matricula}") 
     
-    data_nasc = input("Digite a data de nascimento do aluno: \n")
+    data_nasc = input("Digite a data de nascimento do aluno (DD/MM/AAAA): \n")
     sexo = input("Digite o sexo do aluno (M/F): \n").upper()
     while sexo not in ["M","F"]:
         print("Dígito inválido. Digite novamente.")
@@ -23,7 +23,6 @@ def cadastar_aluno():
     while "@" not in email:
         print("E-mail inválido. Digite novamente. incluindo @")
         email = input("Digite o e-mail do aluno: ")
-        # validar se o email é válido 
     
     # adicionando os dados do aluno em um dicionário
     
@@ -36,5 +35,4 @@ def cadastar_aluno():
     dados_aluno["email"] = email
     
     alunos.append(dados_aluno)
-    
     print("Aluno cadastrado com sucesso!")   
