@@ -1,7 +1,7 @@
 from dados_globais import lista_alunos, lista_turmas
 from resources import mensagem
 
-def matricular_aluno():
+def matricular_aluno_em_turma():
     mensagem("Matricular Aluno em turma")
     if not lista_alunos:
         print("Você precisa cadastrar alunos primeiro")
@@ -20,7 +20,7 @@ def matricular_aluno():
         print(f"{i+1} - {turma['nome']} Código: {turma['codigo']}")
     turma_escolhida = int(input("Digite o número da turma que deseja matricular: ")) - 1
     
-    lista_turmas[turma_escolhida]['alunos'].append(lista_alunos[aluno_escolhido])
+    lista_alunos[turma_escolhida]['alunos'].append(lista_alunos[aluno_escolhido])
     print(f"Aluno {lista_alunos[aluno_escolhido]['nome']} matriculado na turma {lista_turmas[turma_escolhida]['nome']} com sucesso!")
     
     # alunos e turmas serão listas globais

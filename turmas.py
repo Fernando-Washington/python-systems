@@ -1,33 +1,32 @@
-from resources import gerar_codigo
-from disciplinas import diciplinas
-    # nome codigo carga horaria professor
-turmas = []  
+from dados_globais import lista_turmas, lista_disciplinas
+from resources import gerar_codigo, mensagem
+    # nome codigo carga horaria professor 
 
 # cadastro de turmas
 def cadastrar_turma():
-    print(" 4 - Cadastrar Turma")
+    mensagem("Cadastro de Turmas")
     
     nome_turma = input("Digite o nome da turma: \n")
     codigo = gerar_codigo()
     
-    if diciplinas:
+    if lista_disciplinas:
         print("Disciplinas disponíveis:")
-        for i, item in enumerate(diciplinas):
+        for i, item in enumerate(lista_disciplinas):
             print(f"{i + 1} - {item['nome']}")
-        escolha = int(input("Selecione o número da disciplina")) - 1
-        if 0 <= escolha < len(diciplinas):
-            diciplina_escolhida = diciplinas[escolha]
+        escolha = int(input("Selecione o número da disciplina: \n")) - 1
+        if 0 <= escolha < len(lista_disciplinas):
+            disciplina_escolhida = lista_disciplinas[escolha]
         else:
             print("Seleção inválida.")
             return
     else:
         print("Nenhuma disciplina cadastrada.")
 
-    dados_turma = {
+    nova_turma = {
         "nome": nome_turma,
         "codigo": codigo,
-        "disciplina": diciplina_escolhida
+        "alunos": [] # lista vazia para armazenar alunos matriculados
     }
     
-    turmas.append(dados_turma)
+    lista_turmas.append(nova_turma)
     print("Turma cadastrada com sucesso!")

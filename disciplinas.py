@@ -1,11 +1,10 @@
-from resources import gerar_codigo
+from dados_globais import lista_disciplinas
+from resources import gerar_codigo, mensagem
 from professores import professores
-
-diciplinas = []
 
 # cadastro de disciplinas
 def cadastrar_disciplina():
-    print(" 3 - Cadastrar Disciplina")
+    mensagem("Cadastar de Disciplina")
     
     nome_disciplina = input("Digite o nome da disciplina: \n")
     codigo = gerar_codigo()
@@ -29,12 +28,12 @@ def cadastrar_disciplina():
     
     '''carga_horaria = f"{carga_horaria} horas"'''
     
-    dados_diciplina = {
+    dados_disciplina = {
         "nome": nome_disciplina,
         "codigo": codigo,
         "carga_horaria": carga_horaria,
         "professor": professor_selecionado
     }
     
-    diciplinas.append(dados_diciplina)
+    lista_disciplinas.append(dados_disciplina)
     print("Disciplina cadastrada com sucesso!")

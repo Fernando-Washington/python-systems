@@ -3,8 +3,8 @@ from alunos import cadastar_aluno
 from professores import cadastrar_professor
 from disciplinas import cadastrar_disciplina
 from turmas import cadastrar_turma
-from matricular_alunos import matricular_aluno
-from alocar_professor import alocar_professor_em_disciplina
+from matricular_alunos import matricular_aluno_em_turma
+#from alocar_professor import alocar_professor_em_disciplina
 # erro circular de importação estou tentando...
 
 # mensagem de boas vindas
@@ -16,7 +16,7 @@ opcoes = {
     2: cadastrar_professor,
     3: cadastrar_disciplina,
     4: cadastrar_turma,
-    5: matricular_aluno
+    5: matricular_aluno_em_turma
     # 6: alocar_professor[...]
 }
 
@@ -34,16 +34,18 @@ def main():
             cadastrar_professor()
         elif opcao_escolhida == 3:
             cadastrar_disciplina()
+            print("em teste")
+            # funcionando pronto para habilitar funcao   
         elif opcao_escolhida == 4:
             cadastrar_turma()
         elif opcao_escolhida == 5: 
-            matricular_aluno()
+            matricular_aluno_em_turma()
             print("###### Em teste ######")
             print("###### Em teste ######")
             print("###### Em teste ######")
         elif opcao_escolhida == 6:
             print("Não implementado")
-            alocar_professor_em_disciplina()
+            #alocar_professor_em_disciplina()
             print("###### Em teste ######")
             print("###### Em teste ######")
             print("###### Em teste ######")

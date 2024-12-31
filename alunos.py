@@ -1,9 +1,11 @@
+from dados_globais import lista_alunos
 from random import randint
-alunos = []
+from resources import mensagem
+
 
 # funcao para cadastrar alunos
 def cadastar_aluno():
-    print(" 1 - Cadastrar Aluno")
+    mensagem("Cadastrar Aluno")
     dados_aluno = {}
     
     nome_aluno = input("Digite o nome do aluno: \n")
@@ -34,5 +36,5 @@ def cadastar_aluno():
     dados_aluno["telefone"] = telefone
     dados_aluno["email"] = email
     
-    alunos.append(dados_aluno)
-    print("Aluno cadastrado com sucesso!")   
+    lista_alunos.append({"nome": nome_aluno, "matricula": matricula})
+    print(f"Aluno {dados_aluno['nome']} cadastrado com sucesso!")   
