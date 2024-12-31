@@ -4,3 +4,4 @@
 lista_alunos = []
 lista_turmas = []
 lista_professores = []
+lista_disciplinas = []
