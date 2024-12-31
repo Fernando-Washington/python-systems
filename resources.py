@@ -2,9 +2,9 @@ from random import randint
 
 # exibir mensagem formatada
 def mensagem(msg):
-    print("-" * 30)
-    print(msg.center(30))
-    print("-" * 30)
+    print("-" * 46)
+    print(msg.center(46))
+    print("-" * 46)
 
 # exibe opcoes do menu principal
 def menu_opcoes():
