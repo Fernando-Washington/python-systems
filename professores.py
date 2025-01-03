@@ -1,3 +1,4 @@
+from dados_globais import lista_professores
 from resources import gerar_codigo, mensagem
 
 professores = []
@@ -33,7 +34,8 @@ def cadastrar_professor():
         "endereco": endereco,
         "telefone": telefone,
         "email": email,
+        "disciplinas": []
     }
     
-    professores.append(dados_professor)
+    lista_professores.append(dados_professor)
     print("Professor cadastrado com sucesso!")
