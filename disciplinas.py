@@ -1,6 +1,5 @@
-from dados_globais import lista_disciplinas
+from dados_globais import lista_disciplinas, lista_professores
 from resources import gerar_codigo, mensagem
-from professores import professores
 
 # cadastro de disciplinas
 def cadastrar_disciplina():
@@ -11,14 +10,14 @@ def cadastrar_disciplina():
     carga_horaria = int(input("Digite a carga horária da disciplina em horas: \n"))
 
     # logica para vincular professor a disciplina
-    if professores: # se a lista nãoe stiver vazia retornará True
+    if lista_professores: # se a lista nãoe stiver vazia retornará True
         print("Professores já cadastrados: ")
-        for i, item in enumerate(professores): 
+        for i, item in enumerate(lista_professores): 
             print(f"{i + 1} - {item['nome']}") 
             # exibindo os professores cadastrados para garantir que nomes de disciplinas de forma numerada
             escolha = int(input("Selecione o número do professor respomsável pela disciplina \n")) - 1 # -1 pois a lista começa do 0
-        if 0 <= escolha < len(professores):    
-            professor_selecionado = professores[escolha]["nome"]
+        if 0 <= escolha < len(lista_professores):    
+            professor_selecionado = lista_professores[escolha]["nome"]
         else:
             print("Seleção inválida.")
             return
