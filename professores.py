@@ -1,10 +1,10 @@
-from resources import gerar_codigo
+from resources import gerar_codigo, mensagem
 
 professores = []
 
 # cadastro de professores incluindo disciplina associada
 def cadastrar_professor():
-    print(" 2 - Cadastrar Professor")
+    mensagem("Cadastrar Professor")
     
     nome_professor = input("Digite o nome do professor: \n")
     codigo = gerar_codigo()
@@ -22,8 +22,6 @@ def cadastrar_professor():
     while "@" not in email:
         print("E-mail inválido. Digite novamente. incluindo @ no email")
         email = input("Digite o e-mail do professor: ")
-        
-    disciplina_professor = input("Digite o nome da disciplina do professor: ")   
     
     # adicionando os dados do professor em um dicionário
     
@@ -35,7 +33,6 @@ def cadastrar_professor():
         "endereco": endereco,
         "telefone": telefone,
         "email": email,
-        "disciplina": disciplina_professor
     }
     
     professores.append(dados_professor)
