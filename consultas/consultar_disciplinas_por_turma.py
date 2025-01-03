@@ -8,9 +8,12 @@ def consultar_disciplinas_por_turma():
         return
     
     for turma in lista_turmas:
-        print(f"Turma: {turma['nome']}")
-        if turma['disciplinas']:
-            for disciplina in turma['disciplinas']:
+        print(f"Turma: {turma.get('nome', '(nome ausente)')}")
+        disciplinas = turma.get('disciplinas', [])  # Garante que disciplinas seja uma lista
+        if disciplinas:
+            for disciplina in disciplinas:
                 print(f" - {disciplina['nome']} (Código: {disciplina['codigo']})")
         else:
             print("Nenhuma disciplina alocada.")
+
+# o .get busca o valor associado a uma chave específica em um dicionário.
