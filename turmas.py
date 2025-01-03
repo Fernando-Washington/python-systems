@@ -25,7 +25,8 @@ def cadastrar_turma():
     nova_turma = {
         "nome": nome_turma,
         "codigo": codigo,
-        "alunos": [] # lista vazia para armazenar alunos matriculados
+        "alunos": [], # lista vazia para armazenar alunos matriculados
+        "disciplina": [],
     }
     
     lista_turmas.append(nova_turma)
