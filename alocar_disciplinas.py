@@ -12,34 +12,37 @@ def alocar_disciplina_em_turma():
         return
 
     print("Disciplinas disponíveis:")
-    for i, disciplina in enumerate(lista_disciplinas):
+    disciplinas_validas = [disciplina for disciplina in lista_disciplinas if disciplina.get('nome')]
+    if not disciplinas_validas:
+        print("Nenhuma disciplina válida cadastrada.")
+        return
+    
+    for i, disciplina in enumerate(disciplinas_validas):
         print(f"{i+1} - {disciplina['nome']}")
-
-    try:
-        escolha_disciplina = int(input("Selecione o número da disciplina: ")) - 1
-    except ValueError:
+        
+    escolha_disciplina = input("Selecione o número da disciplina: ")
+    if not escolha_disciplina.isdigit() or int(escolha_disciplina)-1 not in range(len(disciplinas_validas)):
         print("Entrada inválida.")
         return
-
-    if 0 <= escolha_disciplina < len(lista_disciplinas):
-        disciplina = lista_disciplinas[escolha_disciplina]
-    else:
-        print("Seleção inválida.")
-        return
+    disciplina = disciplinas_validas[int(escolha_disciplina) - 1]
 
     print("Turmas disponíveis:")
-    for i, turma in enumerate(lista_turmas):
+    turmas_validas = [turma for turma in lista_turmas if turma.get('nome')]
+    if not turmas_validas:
+        print("Nenhuma disciplina válida cadastrada.")
+        return
+    
+    for i, turma in enumerate(turmas_validas):
         print(f"{i+1} - {turma['nome']}")
-
-    try:
-        escolha_turma = int(input("Selecione o número da turma: ")) - 1
-    except ValueError:
+        
+    escolha_turma = input("Selecione o número da turma: ")
+    if not escolha_turma.isdigit() or int(escolha_turma) - 1 not in range(len(lista_turmas)):
         print("Entrada inválida.")
         return
 
-    if 0 <= escolha_turma < len(lista_turmas):
-        turma = lista_turmas[escolha_turma]
-        turma["disciplinas"].append(disciplina)
-        print(f"Disciplina {disciplina['nome']} alocada à turma {turma['nome']} com sucesso!")
-    else:
-        print("Seleção inválida.")
+    turma = lista_turmas[int(escolha_turma) - 1]
+    turma.setdefault('disciplinas', []).append(disciplina)
+    print(f"Disciplina {disciplina['nome']} alocada na turma {turma['nome']} com sucesso!")
+    
+    # ""setdefault" is a Dictionary method which will search for a key in the dictionary if that key is present then it will return the value of that key
+    
