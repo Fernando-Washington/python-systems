@@ -8,8 +8,6 @@ def consultar_professores_por_disciplina():
         return
     
     for disciplina in lista_disciplinas:
-        professor = disciplina.get("professor")
-        if professor:
-            print(f"Disciplina: {disciplina['nome']} - Professor: {professor['nome']}")
-        else:
-            print(f"Disciplina: {disciplina['nome']} - Sem professor alocado.")
+        professor = disciplina.get('professor', 'Nenhum professor alocado')
+        print(f"Disciplina: {disciplina['nome']}")
+        print(f"Professor: {professor['nome']}")   
