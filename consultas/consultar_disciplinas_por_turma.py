@@ -12,7 +12,7 @@ def consultar_disciplinas_por_turma():
         disciplinas = turma.get('disciplinas', [])  # Garante que disciplinas seja uma lista
         if disciplinas:
             for disciplina in disciplinas:
-                print(f" - {disciplina['nome']} (Código: {disciplina['codigo']})")
+                print(f" - {disciplina['nome']} Código: {disciplina['codigo']}")
         else:
             print("Nenhuma disciplina alocada.")
 
