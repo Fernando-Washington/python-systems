@@ -2,6 +2,8 @@ from dados_globais import lista_disciplinas, lista_turmas
 from resources import mensagem
 
 def alocar_disciplina_em_turma():
+    """função responsável por alocar disciplina em turma e armazenar dados a lista_turmas
+    """
     mensagem("Alocar Disciplina em Turma")
 
     if not lista_disciplinas:

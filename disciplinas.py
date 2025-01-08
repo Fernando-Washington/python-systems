@@ -3,6 +3,8 @@ from resources import gerar_codigo, mensagem
 
 # cadastro de disciplinas
 def cadastrar_disciplina():
+    """função responsável por cadastrar disciplina e armazenar dados em lista_disciplinas
+    """
     mensagem("Cadastar Disciplina")
     
     nome_disciplina = input("Digite o nome da disciplina: \n")

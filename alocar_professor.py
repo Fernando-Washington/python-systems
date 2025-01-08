@@ -2,6 +2,8 @@ from dados_globais import lista_disciplinas, lista_professores
 from resources import mensagem
 
 def alocar_professor_em_disciplina():
+    """função responsável por alocar um professor em uma disciplina e armazenar dados a lista_professores
+    """
     mensagem("Alocação de professor em disciplina")
     # verifica se existem professores cadastrados
     if not lista_professores: # melhor trocar o nome da variavel por disciplina?

@@ -2,6 +2,9 @@ from dados_globais import lista_alunos, lista_turmas
 from resources import mensagem
 
 def matricular_aluno_em_turma():
+    """
+    função que matricula alunos em turmas e armazena os dados na lista_turmas
+    """
     mensagem("Matricular Aluno em turma")
     
     # vefica se há alunos e turmas cadastrados

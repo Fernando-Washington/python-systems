@@ -5,6 +5,8 @@ professores = []
 
 # cadastro de professores incluindo disciplina associada
 def cadastrar_professor():
+    """função responsável por cadastrar professor e armazenar dados em lista_professores
+    """
     mensagem("Cadastrar Professor")
     
     nome_professor = input("Digite o nome do professor: \n")

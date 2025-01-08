@@ -5,6 +5,8 @@ from resources import mensagem
 
 # funcao para cadastrar alunos
 def cadastar_aluno():
+    """função responsável por cadastrar alunos e armazenar dados a lista_alunos
+    """
     mensagem("Cadastrar Aluno")
     dados_aluno = {}
     

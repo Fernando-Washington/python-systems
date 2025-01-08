@@ -2,6 +2,8 @@ from dados_globais import lista_disciplinas
 from resources import mensagem
 
 def consultar_professores_por_disciplina():
+    """função responsável por exibir os professores de cada disciplina
+    """
     mensagem("Consultar Professores por Disciplina")
     if not lista_disciplinas:
         print("Nenhuma disciplina cadastrada.")

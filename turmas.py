@@ -4,6 +4,8 @@ from resources import gerar_codigo, mensagem
 
 # cadastro de turmas
 def cadastrar_turma():
+    """função que cadastra turmas e armazena os dados na lista_turmas
+    """
     mensagem("Cadastro de Turmas")
     
     nome_turma = input("Digite o nome da turma: \n")

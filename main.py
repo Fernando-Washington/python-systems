@@ -31,6 +31,8 @@ opcoes = {
 
 # Loop principal do programa para interagir com o usuário
 def main():
+    """função principal responsável por exibir o menu principal e executar as opções escolhidas pelo usuário
+    """
     while True:
         mensagem("Menu Principal")
         menu_opcoes()

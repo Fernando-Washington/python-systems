@@ -2,6 +2,8 @@ from dados_globais import lista_turmas
 from resources import mensagem
 
 def consultar_disciplinas_por_turma():
+    """função responsável por exibir as disciplinas de cada turma
+    """
     mensagem("Consultar Disciplinas por Turma")
     if not lista_turmas:
         print("Nenhuma turma cadastrada.")

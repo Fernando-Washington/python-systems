@@ -2,6 +2,8 @@ from dados_globais import lista_turmas
 from resources import mensagem
 
 def consultar_alunos_por_turma():
+    """função responsável por exibir os alunos matriculados em cada turma
+    """
     mensagem("Consultar Alunos por Turma")
     if not lista_turmas:
         print("Nenhuma turma cadastrada.")
